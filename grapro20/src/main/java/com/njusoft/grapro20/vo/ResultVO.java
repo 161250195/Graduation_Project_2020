@@ -1,4 +1,4 @@
-package com.njusoft.grapro20.vo;
+package grapro20.src.main.java.com.njusoft.grapro20.vo;
 
 import lombok.Data;
 import lombok.ToString;

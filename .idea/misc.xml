@@ -7,6 +7,7 @@
       </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="WebPackConfiguration">
     <option name="path" value="$PROJECT_DIR$/grapro_vue/node_modules/@vue/cli-service/webpack.config.js" />
   </component>

@@ -1,4 +1,4 @@
-package com.njusoft.grapro20.model;
+package grapro20.src.main.java.com.njusoft.grapro20.model;
 
 public class Investor {
     private Integer id;

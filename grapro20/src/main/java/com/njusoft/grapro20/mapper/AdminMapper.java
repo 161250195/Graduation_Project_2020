@@ -1,6 +1,8 @@
-package com.njusoft.grapro20.mapper;
+package grapro20.src.main.java.com.njusoft.grapro20.mapper;
 
-import com.njusoft.grapro20.model.Admin;
+
+import grapro20.src.main.java.com.njusoft.grapro20.model.Admin;
+
 import java.util.List;
 
 public interface AdminMapper {
