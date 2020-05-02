@@ -1,6 +1,8 @@
-package com.njusoft.grapro20.mapper;
+package grapro20.src.main.java.com.njusoft.grapro20.mapper;
 
-import com.njusoft.grapro20.model.StartupKnowledge;
+
+import grapro20.src.main.java.com.njusoft.grapro20.model.StartupKnowledge;
+
 import java.util.List;
 
 public interface StartupKnowledgeMapper {
@@ -8,9 +10,14 @@ public interface StartupKnowledgeMapper {
 
     int insert(StartupKnowledge record);
 
-    StartupKnowledge selectByPrimaryKey(Integer id);
+    List<StartupKnowledge> selectByPrimaryKey(Integer id);
 
     List<StartupKnowledge> selectAll();
 
     int updateByPrimaryKey(StartupKnowledge record);
+
+    List<StartupKnowledge> pickedList();
+
+    List<StartupKnowledge> unreadList(Integer id);
+
 }

@@ -6,12 +6,6 @@ import grapro20.src.main.java.com.njusoft.grapro20.model.Admin;
 import java.util.List;
 
 public interface AdminService {
-    /**
-     * 添加酒店管理人员账号
-     * @param userForm
-     * @return
-     */
-    ResponseVO addManager(UserForm userForm);
 
     /**
      * 获得所有酒店管理人员信息

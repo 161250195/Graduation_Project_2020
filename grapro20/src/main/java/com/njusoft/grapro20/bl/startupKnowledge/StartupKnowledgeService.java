@@ -13,23 +13,12 @@ public interface StartupKnowledgeService {
      */
     ResponseVO submitStartupKnowledge(StartupKnowledge startupKnowledge);
     /**
-     * 修改创业知识投稿
+     * 修改创业知识投稿(包括修改投稿内容、采用状态、回复消息)
      * @param
      * @return
      */
     ResponseVO updateStartupKnowledge(StartupKnowledge startupKnowledge);
-    /**
-     * 采用/拒用创业知识投稿
-     * @param
-     * @return
-     */
-    ResponseVO checkStartupKnowledge(boolean result);
-    /**
-     * 回复创业知识投稿
-     * @param
-     * @return
-     */
-    ResponseVO feedbackStartupKnowledge(String msg);
+
     /**
      * 创业知识投稿列表
      * @param
@@ -47,11 +36,11 @@ public interface StartupKnowledgeService {
      * @param
      * @return
      */
-    List<StartupKnowledge> startupKnowledgeHistory();
+    List<StartupKnowledge> startupKnowledgeHistory(Integer id);
     /**
      * 有无未读创业知识投稿结果
      * @param
      * @return
      */
-    boolean unreadStartupKnowledgeResult();
+    boolean unreadStartupKnowledgeResult(Integer id);
 }

@@ -13,4 +13,6 @@ public interface IdentityCheckMapper {
     List<IdentityCheck> selectAll();
 
     int updateByPrimaryKey(IdentityCheck record);
+
+    List<IdentityCheck> unreadList();
 }

@@ -39,4 +39,9 @@
     select id, userid, usertype, checkerid, ifchecked, repeat
     from identity_check
   </select>
+  <select id="unreadList" resultMap="BaseResultMap">
+    select id, userid, usertype, checkerid, ifchecked, repeat
+    from identity_check
+    where id=#{id,jdbcType=INTEGER} and ifchecked!=0
+  </select>
 </mapper>

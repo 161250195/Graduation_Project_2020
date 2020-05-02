@@ -43,4 +43,14 @@
     select id, userid, usertype, title, content, ifchecked, repeat, ifread
     from startup_knowledge
   </select>
+  <select id="pickedList" resultMap="BaseResultMap">
+    select id, userid, usertype, title, content, ifchecked, repeat, ifread
+    from startup_knowledge
+    where ifchecked=1
+  </select>
+  <select id="unreadList" resultMap="BaseResultMap">
+    select id, userid, usertype, title, content, ifchecked, repeat, ifread
+    from startup_knowledge
+    where id = #{id,jdbcType=INTEGER} and ifread=0
+  </select>
 </mapper>

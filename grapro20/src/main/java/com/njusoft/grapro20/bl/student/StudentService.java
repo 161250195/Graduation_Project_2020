@@ -32,17 +32,11 @@ public interface StudentService {
      */
     ResponseVO submitCheckStudent(Student student);
     /**
-     * 批准/拒绝学生审核
+     * 修改学生审核信息（批准/拒绝、回复消息）
      * @param
      * @return
      */
-    ResponseVO checkStudent(boolean result);
-    /**
-     * 回复学生审核结果
-     * @param
-     * @return
-     */
-    ResponseVO feedbackStudent(String msg);
+    ResponseVO checkStudent(IdentityCheck identityCheck);
     /**
      * 学生审核表列表
      * @param
@@ -72,5 +66,5 @@ public interface StudentService {
      * @param
      * @return
      */
-    boolean unreadStudentCheckResult();
+    boolean unreadStudentCheckResult(Integer id);
 }
