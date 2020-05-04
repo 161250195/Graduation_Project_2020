@@ -51,6 +51,11 @@
   <select id="unreadList" resultMap="BaseResultMap">
     select id, userid, usertype, title, content, ifchecked, repeat, ifread
     from startup_knowledge
-    where id = #{id,jdbcType=INTEGER} and ifread=0
+    where userid = #{userid,jdbcType=INTEGER} and ifread=0
+  </select>
+  <select id="descid" resultMap="BaseResultMap">
+    select id
+    from startup_knowledge
+    desc
   </select>
 </mapper>

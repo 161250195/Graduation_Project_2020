@@ -30,41 +30,36 @@ public interface StudentService {
      * @param
      * @return
      */
-    ResponseVO submitCheckStudent(Student student);
+    ResponseVO submitCheckStudent(IdentityCheck identityCheck);
     /**
      * 修改学生审核信息（批准/拒绝、回复消息）
      * @param
      * @return
      */
     ResponseVO checkStudent(IdentityCheck identityCheck);
-    /**
-     * 学生审核表列表
-     * @param
-     * @return
-     */
-    List<IdentityCheck> studentIdentityCheckList();
+
     /**
      * 学生审核表历史记录
      * @param
      * @return
      */
-    List<IdentityCheck> studentIdentityCheckListHistory();
+    List<IdentityCheck> studentIdentityCheckListHistory(Integer id);
     /**
      * 查找学生
      * @param id
      * @return
      */
-    List<Student> searchStudent(Integer id);
+    Student searchStudentByid(Integer id);
     /**
      * 查找学生
      * @param name
      * @return
      */
-    List<Student> searchStudent(String name);
+    List<Student> searchStudentByName(String name);
     /**
      * 有无未读学生资格审核结果
      * @param
      * @return
      */
-    boolean unreadStudentCheckResult(Integer id);
+    boolean unreadStudentCheckResult(Integer userid);
 }

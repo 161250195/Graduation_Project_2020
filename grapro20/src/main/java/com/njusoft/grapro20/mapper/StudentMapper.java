@@ -1,6 +1,8 @@
-package com.njusoft.grapro20.mapper;
+package grapro20.src.main.java.com.njusoft.grapro20.mapper;
 
-import com.njusoft.grapro20.model.Student;
+
+import grapro20.src.main.java.com.njusoft.grapro20.model.Student;
+
 import java.util.List;
 
 public interface StudentMapper {
@@ -13,4 +15,8 @@ public interface StudentMapper {
     List<Student> selectAll();
 
     int updateByPrimaryKey(Student record);
+
+    List<Integer> descid();
+
+    List<Student> selectByName(String name);
 }

@@ -47,4 +47,14 @@
     select id, password, name, intro, age, college, phone, ifchecked, teamid
     from student
   </select>
+  <select id="descid" resultMap="BaseResultMap">
+    select id
+    from student
+    desc
+  </select>
+  <select id="selectByName" resultMap="BaseResultMap">
+    select id, password, name, intro, age, college, phone, ifchecked, teamid
+    from student
+    where name like '% #{name,jdbcType=VARCHAR}%'
+  </select>
 </mapper>

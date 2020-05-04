@@ -8,7 +8,7 @@ import java.util.List;
 public interface AdminService {
 
     /**
-     * 获得所有酒店管理人员信息
+     * 获得所有管理人员信息
      * @return  List<Admin>
      */
     List<Admin> getAllManagers();
@@ -19,7 +19,7 @@ public interface AdminService {
      */
     Admin login(UserForm userForm);
     /**
-     * 获管理员个人信息
+     * 获得管理员个人信息
      * @param id
      * @return
      */
@@ -32,10 +32,10 @@ public interface AdminService {
      */
     ResponseVO updateAdminInfo(Admin admin);
     /**
-     * 有无新资格审核表
+     * 有无未处理资格审核表
      * @param
      * @return
      */
-    boolean unreadIdentityCheck();
+    boolean uncheckIdentityCheck();
 
 }

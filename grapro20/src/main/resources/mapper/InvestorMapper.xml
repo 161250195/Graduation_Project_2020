@@ -43,4 +43,14 @@
     select id, password, name, intro, age, enterprise, phone, ifchecked
     from investor
   </select>
+  <select id="descid" resultMap="BaseResultMap">
+    select id
+    from investor
+    desc
+  </select>
+  <select id="selectByName" resultMap="BaseResultMap">
+    select id, password, name, intro, age, enterprise, phone, ifchecked
+    from investor
+    where name like '%#{name,jdbcType=VARCHAR}%'
+  </select>
 </mapper>

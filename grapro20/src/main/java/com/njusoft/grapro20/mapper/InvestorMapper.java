@@ -1,6 +1,8 @@
-package com.njusoft.grapro20.mapper;
+package grapro20.src.main.java.com.njusoft.grapro20.mapper;
 
-import com.njusoft.grapro20.model.Investor;
+
+import grapro20.src.main.java.com.njusoft.grapro20.model.Investor;
+
 import java.util.List;
 
 public interface InvestorMapper {
@@ -13,4 +15,8 @@ public interface InvestorMapper {
     List<Investor> selectAll();
 
     int updateByPrimaryKey(Investor record);
+
+    List<Integer> descid();
+
+    List<Investor> selectByName(String name);
 }

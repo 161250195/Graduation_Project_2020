@@ -8,11 +8,15 @@ public interface IdentityCheckMapper {
 
     int insert(IdentityCheck record);
 
-    IdentityCheck selectByPrimaryKey(Integer id);
+    List<IdentityCheck> selectByPrimaryKey(Integer id);
 
     List<IdentityCheck> selectAll();
 
     int updateByPrimaryKey(IdentityCheck record);
 
-    List<IdentityCheck> unreadList();
+    List<IdentityCheck> uncheckList();
+
+    List<Integer> descid();
+
+    List<IdentityCheck> unreadList(Integer id);
 }

@@ -23,13 +23,13 @@ public interface InvestorService {
      * @param
      * @return
      */
-    ResponseVO updateManager(Investor investor);
+    ResponseVO updateInvestor(Investor investor);
     /**
      * 投资人提交审核
      * @param
      * @return
      */
-    ResponseVO submitCheckInvestor(Investor investor);
+    ResponseVO submitCheckInvestor(IdentityCheck identityCheck);
     /**
      * 修改投资人审核信息（批准/拒绝、回复消息）
      * @param
@@ -37,34 +37,29 @@ public interface InvestorService {
      */
     ResponseVO checkInvestor(IdentityCheck identityCheck);
 
-    /**
-     * 投资人审核表列表
-     * @param
-     * @return
-     */
-    List<IdentityCheck> investorIdentityCheckList();
+
     /**
      * 投资人审核表历史记录
      * @param
      * @return
      */
-    List<IdentityCheck> identityCheckListHistory();
+    List<IdentityCheck> identityCheckListHistory(Integer id);
     /**
      * 查找投资人
      * @param id
      * @return
      */
-    List<Investor> searchInvestor(Integer id);
+    Investor searchInvestorByid(Integer id);
     /**
      * 查找投资人
      * @param name
      * @return
      */
-    List<Investor> searchInvestor(String name);
+    List<Investor> searchInvestorBynName(String name);
     /**
      * 有无未读投资人资格审核结果
      * @param
      * @return
      */
-    boolean unreadInvestorCheckResult(Integer id);
+    boolean unreadInvestorCheckResult(Integer userid);
 }

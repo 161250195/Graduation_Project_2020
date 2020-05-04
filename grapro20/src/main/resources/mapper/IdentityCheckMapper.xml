@@ -8,6 +8,7 @@
     <result column="checkerid" jdbcType="INTEGER" property="checkerid" />
     <result column="ifchecked" jdbcType="INTEGER" property="ifchecked" />
     <result column="repeat" jdbcType="VARCHAR" property="repeat" />
+    <result column="ifreaded" jdbcType="INTRGER" property="ifreaded" />
   </resultMap>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from identity_check
@@ -15,7 +16,7 @@
   </delete>
   <insert id="insert" parameterType="com.njusoft.grapro20.model.IdentityCheck">
     insert into identity_check (id, userid, usertype, 
-      checkerid, ifchecked, repeat
+      checkerid, ifchecked, repeat,ifreaded
       )
     values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{usertype,jdbcType=INTEGER}, 
       #{checkerid,jdbcType=INTEGER}, #{ifchecked,jdbcType=INTEGER}, #{repeat,jdbcType=VARCHAR}
@@ -27,21 +28,32 @@
       usertype = #{usertype,jdbcType=INTEGER},
       checkerid = #{checkerid,jdbcType=INTEGER},
       ifchecked = #{ifchecked,jdbcType=INTEGER},
-      repeat = #{repeat,jdbcType=VARCHAR}
+      repeat = #{repeat,jdbcType=VARCHAR},
+      ifreaded=#{ifreaded,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select id, userid, usertype, checkerid, ifchecked, repeat
+    select id, userid, usertype, checkerid, ifchecked, repeat,ifreaded
     from identity_check
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select id, userid, usertype, checkerid, ifchecked, repeat
+    select id, userid, usertype, checkerid, ifchecked, repeat,ifreaded
     from identity_check
   </select>
-  <select id="unreadList" resultMap="BaseResultMap">
-    select id, userid, usertype, checkerid, ifchecked, repeat
+  <select id="uncheckList" resultMap="BaseResultMap">
+    select id, userid, usertype, checkerid, ifchecked, repeat,ifreaded
     from identity_check
-    where id=#{id,jdbcType=INTEGER} and ifchecked!=0
+    where ifchecked=0
+  </select>
+  <select id="descid" resultMap="BaseResultMap">
+    select id
+    from identity_check
+    desc
+  </select>
+  <select id="userUnreadList" resultMap="BaseResultMap">
+    select id, userid, usertype, checkerid, ifchecked, repeat,ifreaded
+    from identity_check
+    where id=#{id,jdbcType=INTEGER} and ifchecked!=0 and ifreaded=0
   </select>
 </mapper>

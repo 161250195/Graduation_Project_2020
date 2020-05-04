@@ -18,6 +18,8 @@ public interface StartupKnowledgeMapper {
 
     List<StartupKnowledge> pickedList();
 
-    List<StartupKnowledge> unreadList(Integer id);
+    List<StartupKnowledge> unreadList(Integer userid);
+
+    List<Integer> descid();
 
 }

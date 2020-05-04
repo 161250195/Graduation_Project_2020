@@ -42,5 +42,5 @@ public interface StartupKnowledgeService {
      * @param
      * @return
      */
-    boolean unreadStartupKnowledgeResult(Integer id);
+    boolean unreadStartupKnowledgeResult(Integer userid);
 }

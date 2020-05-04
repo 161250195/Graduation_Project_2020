@@ -13,6 +13,7 @@ public class StartupKnowledgeServiceImpl implements StartupKnowledgeService {
     @Override
     public ResponseVO submitStartupKnowledge(StartupKnowledge startupKnowledge) {
         try {
+            startupKnowledge.setId(startupKnowledgeMapper.descid().get(0)+1);
             startupKnowledgeMapper.insert(startupKnowledge);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -50,8 +51,8 @@ public class StartupKnowledgeServiceImpl implements StartupKnowledgeService {
     }
 
     @Override
-    public boolean unreadStartupKnowledgeResult(Integer id) {
-        if (startupKnowledgeMapper.unreadList(id).size()!=0){
+    public boolean unreadStartupKnowledgeResult(Integer userid) {
+        if (startupKnowledgeMapper.unreadList(userid).size()!=0){
             return true;
         }
         return false;

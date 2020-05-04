@@ -45,8 +45,8 @@ public class AdminServiceImpl implements AdminService{
 
 
     @Override
-    public boolean unreadIdentityCheck() {
-       if (identityCheckMapper.unreadList().size()!=0){
+    public boolean uncheckIdentityCheck() {
+       if (identityCheckMapper.uncheckList().size()!=0){
           return true;
         }
         return false;
